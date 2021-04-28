@@ -11,8 +11,8 @@ Um die Anwendung zu installieren und zu starten sind folgende Voraussetzungen ge
 ## Installation
 
 Um die Anwendung zu installieren, muss das Projekt ausgecheckt werden und die benötigten Node Module installiert werden:
-`$ git clone git@github.com:mediengestadler/ionic-firebase-example.git
-$ npm install`
+`$ git clone git@github.com:mediengestadler/ionic-firebase-example.git`
+`$ npm install`
 
 ## Anwendung starten
 
