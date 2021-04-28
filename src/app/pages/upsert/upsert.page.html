@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"> 
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Buchungsanfrage {{ currentKey ? 'bearbeiten' : 'anlegen' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item color="danger" *ngIf="isSubmitted && !this.bookingForm.get('name').valid">Bitte gib deinen Namen an</ion-item>
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input formControlName="email" type="email" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item color="danger" *ngIf="isSubmitted && !this.bookingForm.get('email').valid">Bitte gib test@test als gültige Email an</ion-item>
+
+    <ion-item>
+      <ion-label>Telefon</ion-label>
+      <ion-input formControlName="mobile" type="tel">
+      </ion-input>
+    </ion-item>
+
+    <ion-button type="submit" color="primary" expand="block">{{ currentKey ? 'Ändern' : 'Speichern' }}</ion-button>
+  </form>
+</ion-content>
